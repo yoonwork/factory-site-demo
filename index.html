@@ -666,13 +666,13 @@ dialog.nm .btn{border-radius:999px;min-height:48px}
 @media (max-width:767px){.b3-meta .mono:last-child{display:none}}
 .b3-meta .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,194,26,.25)}
 .xh{position:absolute;width:18px;height:18px;pointer-events:none;background:linear-gradient(currentColor,currentColor) center/1.2px 100% no-repeat,linear-gradient(currentColor,currentColor) center/100% 1.2px no-repeat;color:rgba(255,255,255,.7)}
-.b3-in{position:relative;padding-top:120px;padding-bottom:28px}
-.b3-title{margin:0;font-weight:800;letter-spacing:-.05em;line-height:.98;font-size:clamp(56px,14.4vw,148px)}
+.b3-in{position:relative;width:100%;padding-top:120px;padding-bottom:28px}
+.b3-title{margin:20px 0 0;font-weight:800;letter-spacing:-.035em;line-height:1.12;font-size:clamp(38px,7vw,92px)}
 .b3-title span{display:block}
-.b3-title .l2{display:flex;align-items:center;flex-wrap:wrap;gap:.08em .22em}
-.paren{display:inline-flex;align-items:center;gap:.2em;padding:.12em .34em .14em;border:2px solid rgba(255,255,255,.85);border-radius:999px;font-family:var(--disp);font-stretch:72%;font-weight:700;font-size:.34em;letter-spacing:.01em;line-height:1;font-style:normal;color:#fff;vertical-align:middle;white-space:nowrap}
-@media (max-width:767px){.paren{margin:.1em 0 .06em}}
-.paren i{width:.32em;height:.32em;border-radius:50%;background:var(--accent);display:inline-block}
+
+.paren{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.4);border-radius:999px;font-weight:600;font-size:15px;letter-spacing:0;line-height:1.2;font-style:normal;color:#fff;white-space:nowrap;background:rgba(0,0,0,.25);backdrop-filter:blur(6px)}
+
+.paren i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
 .b3-row{display:grid;gap:20px;margin-top:28px}
 .b3-row p{margin:0;font-size:17px;color:#ECE9E2;max-width:480px}
 .b3-row .acts{display:flex;flex-wrap:wrap;gap:8px}
@@ -685,7 +685,6 @@ dialog.nm .btn{border-radius:999px;min-height:48px}
   .b3-hero{min-height:min(88vh,780px)}
   .b3-metaw{top:28px}
   .b3-in{padding-bottom:48px}
-  .b3-title .l2{padding-left:1.1em}
   .b3-row{grid-template-columns:1fr auto;align-items:end;margin-top:40px}
 }
 @media (min-width:1100px){
@@ -1103,7 +1102,7 @@ function homeB(){
       <span class="ex">흐름 예시</span>
     </div>
     <div class="wrap b3-in">
-      <h1 class="b3-title"><span class="l1">깎고, 재고,</span><span class="l2"><em class="paren" aria-label="공차 플러스마이너스 0.01밀리미터"><i></i>±0.01mm</em><span>다시 잽니다.</span></span></h1>
+      <em class="paren"><i></i>공차 ±0.01mm · 3차원 측정 성적서</em><h1 class="b3-title"><span>도면 그대로,</span><span>0.01mm까지 정확하게.</span></h1>
       <div class="b3-row"><p>${N()}은 산업 설비에 들어가는 금속 가공 부품을 만들어요. 가공한 뒤 3차원 측정기로 한 번 더 재서 성적서와 함께 보내요.</p>
         <div class="acts"><a class="btn btn-w" href="${href('inquiry')}">도면으로 견적 받기</a><a class="btn btn-ghost" href="${href('about')}">회사 소개</a></div></div>
     </div>
