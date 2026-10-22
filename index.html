@@ -981,6 +981,27 @@ dialog.nm .btn{border-radius:999px;min-height:48px}
 @media (min-width:1264px){.b4-hero{max-width:1232px;margin:0 auto}}
 @media (prefers-reduced-motion:reduce){.b4-hero>img{transform:none}.b4-cards .ph img{transition:none}}
 
+/* 최종 검사 (10/22): 교과서 8장 체크리스트에 맞춘 작은 수정 */
+[data-t="b"]{--r-md:8px;--r-img:24px;--mono:var(--font)}
+[data-t="b"] .mono{font-family:var(--font);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+[data-t="b"] .inp,[data-t="b"] .search input{border-color:#8F897D}
+.mbar .btn{min-height:52px}
+.b4-hero .b3-title{font-size:46px;line-height:1.16;letter-spacing:-.02em}
+.b4-cards button,.b4-stat,.b4-steps li{border-radius:24px}
+.b4-bento .b3-cell{border-radius:24px}
+.b4-bento .b3-cell.x .co{border-radius:8px}
+[data-t="b"] .ft-word{font-size:clamp(40px,7vw,88px);color:#E6E1D7}
+[data-t="b"] .ft-word small{color:#DCD6CB}
+[data-t="c"] .c-band::before{display:none}
+[data-t="c"] .c-kick{font-family:var(--font);letter-spacing:.02em;font-size:13px;font-weight:600}
+@media (min-width:900px){
+  .b4-band{padding:120px 0}
+  .b4-band.b4-top{padding:20px 0 0}
+  .b4-hero{min-height:min(62vh,560px)}
+  .b4-hero .b3-title{font-size:84px}
+  .a3-tol{left:24px;bottom:24px;box-shadow:none}
+}
+
 /* 4차: A 휴대폰 첫 화면에 사진이 보이게 (페르소나 10초 테스트) */
 .a-cert-mo{display:none}
 @media (max-width:899px){
@@ -1242,7 +1263,7 @@ function homeB(){
   <section class="b4-band cream b4-top">
     <div class="b4-hero" id="b3hero">
       ${pic('lathe2','(min-width:1264px) 1232px, 100vw','CNC 선반 척에 물린 금속 봉과 공구', true)}<div class="scrim"></div>
-      <span class="b4-ph">CNC 선반 가공 라인 · 사진 예시</span>
+      <span class="b4-ph">CNC 선반 가공 라인</span>
       <div class="b4-htx">
         <em class="paren"><i></i>공차 ±0.01mm · 3차원 측정 성적서</em><h1 class="b3-title"><span>도면 그대로,</span><span>0.01mm까지 정확하게.</span></h1>
       </div>
@@ -1267,7 +1288,7 @@ function homeB(){
   </section>
   <section class="b4-band cream">
     <div class="wrap">
-      <div class="b4-head rv"><div><span class="b4-kick">PRODUCTS</span><h2>만드는 것</h2></div><p>모두 고객 도면에 맞춰 깎아요. 카드를 누르면 규격표가 열려요.</p></div>
+      <div class="b4-head rv"><div><span class="b4-kick">제품 ${PRODUCTS.length}종</span><h2>만드는 것</h2></div><p>모두 고객 도면에 맞춰 깎아요. 카드를 누르면 규격표가 열려요.</p></div>
       <div class="b4-tabs" role="group" aria-label="제품 분류">${tabs.map(([c, n]) => `<button type="button" data-cat="${c}" aria-pressed="${S.cat === c}">${c}<span class="n">${n}</span></button>`).join('')}</div>
       <ul class="b4-cards${S.cat === '전체' ? ' all' : ''}">${list.map(p => `<li><button type="button" data-prod="${p.id}" aria-label="${p.name} 규격 보기"><div class="ph">${pic(p.ph,'(min-width:900px) 600px, 50vw',p.name)}<span class="cat">${p.cat}</span></div><div class="tx"><div><b>${p.name}</b><span class="meta"><span class="mono">${p.code}</span> · ${p.mat} · <span class="num">${p.tol}</span></span></div><span class="more">자세히 보기</span></div></button></li>`).join('')}</ul>
       <p class="b4-all"><a class="btn btn-s" href="${href('products')}">제품 ${PRODUCTS.length}종 규격 모두 보기</a></p>
@@ -1275,19 +1296,19 @@ function homeB(){
   </section>
   <section class="b4-band white">
     <div class="wrap">
-      <div class="b4-head rv"><div><span class="b4-kick">CAPABILITY</span><h2>재질부터 검사까지</h2></div><p>범위 밖 부품도 도면을 보내 주시면 검토해요. <span class="ex">(범위는 예시예요)</span></p></div>
+      <div class="b4-head rv"><div><span class="b4-kick">가공 능력</span><h2>재질부터 검사까지</h2></div><p>범위 밖 부품도 도면을 보내 주시면 검토해요. <span class="ex">(범위는 예시예요)</span></p></div>
       <div class="b3-bento b4-bento">
-        <div class="b3-cell ph big rv">${pic('mill','(min-width:900px) 700px, 100vw','머시닝센터가 알루미늄 블록을 가공하는 모습')}<span class="tag">머시닝센터 · 사진 예시</span><div class="cap2"><b>머시닝·5축으로 복잡한 형상도 한 번에</b></div></div>
+        <div class="b3-cell ph big rv">${pic('mill','(min-width:900px) 700px, 100vw','머시닝센터가 알루미늄 블록을 가공하는 모습')}<span class="tag">머시닝센터</span><div class="cap2"><b>머시닝·5축으로 복잡한 형상도 한 번에</b></div></div>
         <div class="b3-cell k rv d1"><h3>가공 범위</h3><dl class="b3-spec" aria-label="가공 범위">${CAPSUM.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></div>
-        <div class="b3-cell n rv"><span class="mono">ROUNDNESS</span><div><strong>0.003<small>mm</small></strong><span>연삭 샤프트 진원도 (예시)</span></div></div>
+        <div class="b3-cell n rv"><span class="mono">진원도</span><div><strong>0.003<small>mm</small></strong><span>연삭 샤프트 진원도 (예시)</span></div></div>
         <div class="b3-cell x rv d1"><span class="tgt" aria-hidden="true"><i></i></span><span class="co mono" aria-hidden="true">X 0.000 Y 0.000</span><b>도면 좌표 그대로</b><span>3차원 측정 성적서를 같이 보내요</span></div>
-        <div class="b3-cell ph sm rv d2">${pic('cnc','(min-width:900px) 500px, 100vw','엔드밀이 알루미늄 원형 부품을 가공하는 모습')}<span class="tag">가공 현장 · 사진 예시</span><div class="cap2"><b>열처리·연삭까지 한 공장에서</b></div></div>
+        <div class="b3-cell ph sm rv d2">${pic('cnc','(min-width:900px) 500px, 100vw','엔드밀이 알루미늄 원형 부품을 가공하는 모습')}<span class="tag">가공 현장</span><div class="cap2"><b>열처리·연삭까지 한 공장에서</b></div></div>
       </div>
     </div>
   </section>
   <section class="b4-band cream">
     <div class="wrap">
-      <div class="b4-head rv"><div><span class="b4-kick">PROCESS</span><h2>도면이 부품이 되기까지</h2></div><p>날짜는 보통 걸리는 기간이에요. <span class="ex">(예시)</span></p></div>
+      <div class="b4-head rv"><div><span class="b4-kick">진행 순서</span><h2>도면이 부품이 되기까지</h2></div><p>날짜는 보통 걸리는 기간이에요. <span class="ex">(예시)</span></p></div>
       <ol class="b4-steps">
         <li class="on rv"><span class="d">D+0</span><b>도면 받기</b><span>PDF·DWG·STEP 무엇이든 괜찮아요.</span></li>
         <li class="rv d1"><span class="d">D+1</span><b>검토·견적</b><span>가공 가능 여부와 단가를 알려 드려요.</span></li>
@@ -1320,7 +1341,7 @@ function catalogC(withTitle){
   <div class="c-band">
   <section class="wrap c-top">
     <div>
-      <div class="c-kick mono">PRODUCT CATALOG · ${PRODUCTS.length} ITEMS</div>
+      <div class="c-kick mono">제품 카탈로그 · ${PRODUCTS.length}종</div>
       <h1 class="h-page">${withTitle ? '제품 소개' : `${N()} 제품 카탈로그`}</h1>
       <div class="c-intro"><span>CNC 가공 · 다이캐스팅 · 열처리·연삭 부품</span><span>경기 ○○산업단지 (예시)</span></div>
     </div>
